@@ -1,0 +1,153 @@
+body {
+    background: #333;
+}
+
+.player_wrapper {
+    max-width: 900px;
+    width: 90%;
+    color: white;
+    position: relative;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    .player_overlay {
+        z-index: 99;
+        position: absolute;
+        width: 99%;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        user-select: none;
+        outline-color: white;
+        // opacity: 0;
+        transition: opacity 500ms ease-in-out;
+        transition-delay: 1000ms;
+
+        &:hover {
+            opacity: 1;
+            transition: opacity 150ms ease-in-out;
+            transition-delay: 0ms;
+        }
+
+        .player_video_title {
+            padding-block: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-weight: 500;
+            letter-spacing: .5px;
+            cursor: default;
+            padding-inline: 10px;
+            box-sizing: border-box;
+        }
+
+        .player_controls {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            .video_timeline {
+                width: 100%;
+                padding-inline: 10px;
+                box-sizing: border-box;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 4px;
+
+
+                .video_time {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 500;
+                }
+
+                .duration_stick {
+                    background: rgba(255, 255, 255, .5);
+                    height: 5px;
+                    width: 100%;
+                    cursor: pointer;
+                    border-radius: 1px;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 33%;
+                        height: inherit;
+                        background: white;
+                    }
+                }
+            }
+
+            .player_control_buttons {
+                cursor: default;
+                display: flex;
+                justify-content: space-between;
+
+                button {
+                    color: white;
+                    background: transparent;
+                    width: 100%;
+                    max-width: 40px;
+                    height: 45px;
+                    cursor: pointer;
+
+                    i {
+                        font-size: 18px;
+                    }
+                }
+
+                .action_btns,
+                .setting_btns {
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    flex: 1;
+                }
+
+                .action_btns {
+                    .volume_area {
+                        display: flex;
+                        align-items: center;
+
+                        .volume_range {
+                            -webkit-appearance: none;
+                            background: white;
+                            width: 64px;
+                            height: 3px;
+                            border-radius: 6px;
+                            cursor: pointer;
+
+                            &::-webkit-slider-thumb {
+                                -webkit-appearance: none;
+                                background: white;
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 50%;
+                            }
+                            &::-webkit-slider-runnable-track {
+                                -webkit-appearance: none;
+                                box-shadow: none;
+                                border: none;
+                                background: transparent;
+                            }
+                        }
+                    }
+                }
+
+                .setting_btns {
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    video {
+        width: 100%;
+        vertical-align: middle;
+    }
+}

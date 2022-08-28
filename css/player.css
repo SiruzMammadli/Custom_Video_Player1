@@ -1,0 +1,189 @@
+body {
+  background: #333;
+}
+
+.player_wrapper {
+  max-width: 900px;
+  width: 90%;
+  color: white;
+  position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.player_wrapper .player_overlay {
+  z-index: 99;
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline-color: white;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  -webkit-transition-delay: 1000ms;
+          transition-delay: 1000ms;
+}
+
+.player_wrapper .player_overlay:hover {
+  opacity: 1;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+  -webkit-transition-delay: 0ms;
+          transition-delay: 0ms;
+}
+
+.player_wrapper .player_overlay .player_video_title {
+  padding-block: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-weight: 500;
+  letter-spacing: .5px;
+  cursor: default;
+  padding-inline: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.player_wrapper .player_overlay .player_controls {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.player_wrapper .player_overlay .player_controls .video_timeline {
+  width: 100%;
+  padding-inline: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.player_wrapper .player_overlay .player_controls .video_timeline .video_time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-weight: 500;
+}
+
+.player_wrapper .player_overlay .player_controls .video_timeline .duration_stick {
+  background: rgba(255, 255, 255, 0.5);
+  height: 5px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 1px;
+  position: relative;
+}
+
+.player_wrapper .player_overlay .player_controls .video_timeline .duration_stick::before {
+  content: '';
+  position: absolute;
+  width: 33%;
+  height: inherit;
+  background: white;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons {
+  cursor: default;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons button {
+  color: white;
+  background: transparent;
+  width: 100%;
+  max-width: 40px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons button i {
+  font-size: 18px;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons .action_btns,
+.player_wrapper .player_overlay .player_controls .player_control_buttons .setting_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons .action_btns .volume_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons .action_btns .volume_area .volume_range {
+  -webkit-appearance: none;
+  background: white;
+  width: 64px;
+  height: 3px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons .action_btns .volume_area .volume_range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: white;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons .action_btns .volume_area .volume_range::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.player_wrapper .player_overlay .player_controls .player_control_buttons .setting_btns {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.player_wrapper video {
+  width: 100%;
+  vertical-align: middle;
+}
+/*# sourceMappingURL=player.css.map */
