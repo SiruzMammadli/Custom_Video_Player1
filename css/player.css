@@ -182,6 +182,14 @@ body {
           justify-content: flex-end;
 }
 
+.player_wrapper.paused .playBtn {
+  display: none;
+}
+
+.player_wrapper:not(.paused) .pauseBtn {
+  display: none;
+}
+
 .player_wrapper video {
   width: 100%;
   vertical-align: middle;

@@ -1,4 +1,4 @@
-body {
+    body {
     background: #333;
 }
 
@@ -145,6 +145,22 @@ body {
             }
         }
     }
+
+    // -=-=- DISPLAYS -=-=-
+    
+    // PLAY PAUSE
+    &.paused .playBtn {
+        display: none;
+    }
+    &:not(.paused) .pauseBtn {
+        display: none;
+    }
+
+    // FULLSCREEN
+    // &.fullscreen {
+    //     width: 100%;
+    //     height: 100%;
+    // }
 
     video {
         width: 100%;
