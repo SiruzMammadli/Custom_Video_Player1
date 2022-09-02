@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 20px;
+    background: #333;
+    min-height: 100vh;
+}
+
+.player_container {
+    width: 100%;
+    max-width: 900px;
+    background: #000;
+    position: relative;
+
+    .wrapper {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99;
+
+        .player_timeline {
+            width: 100%;
+            height: 8px;
+            padding-inline: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .progress_area {
+                flex: 1;
+                height: 4px;
+                background: rgba(255, 255, 255, .7);
+                border-radius: 8px;
+                transition: height 150ms ease-in-out;
+                cursor: pointer;
+
+                .progress_bar {
+                    width: 50%;
+                    height: inherit;
+                    background: white;
+                    position: relative;
+                    border-radius: inherit;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        background: white;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        border-radius: 50%;
+                        transition: all 150ms ease-in-out;
+
+                    }
+                }
+
+                &:hover {
+                    height: 6px;
+
+                    .progress_bar {
+                        &::before {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .player_controls,
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player_controls {
+            padding: 8px 10px;
+
+            .controls {
+                width: 100%;
+                gap: 4px;
+                color: white;
+
+                &:first-child {
+                    justify-content: start;
+                }
+
+                &:last-child {
+                    justify-content: end;
+                }
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    width: 35px;
+                    height: 35px;
+                    border: none;
+                    border-radius: 50%;
+                    background: transparent;
+                    color: white;
+
+                    i {
+                        font-size: 25px;
+                    }
+                }
+
+                &.left {
+                    #volume_range {
+                        cursor: pointer;
+                        -webkit-appearance: none;
+                        width: 75px;
+                        height: 4px;
+                        border-radius: 4px;
+                        background: rgba(255, 255, 255, .7);
+
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            width: 12px;
+                            height: 12px;
+                            background: white;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                &.center {
+                    .play_pause {
+                        width: 42px;
+                        height: 42px;
+                        border: 3px solid white;
+
+                        i {
+                            font-size: 40px;
+
+                            &.pause {
+                                font-size: 28px;
+                            }
+                        }
+                    }
+
+                    .time {
+                        font-size: 12px;
+                    }
+                }
+
+                &.right {
+                    button {
+                        .setting {
+                            font-size: 21px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    video {
+        width: 100%;
+        vertical-align: middle;
+    }
+}
