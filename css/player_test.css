@@ -4,6 +4,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
+  outline: none;
   list-style: none;
   font-family: Arial, sans-serif;
 }
@@ -63,6 +64,18 @@ body {
   border-radius: inherit;
 }
 
+.player_container .wrapper .player_timeline .progress_area .progress_bar span {
+  position: absolute;
+  top: -16px;
+  right: -8px;
+  color: white;
+  font-size: 11px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+
 .player_container .wrapper .player_timeline .progress_area .progress_bar::before {
   content: "";
   position: absolute;
@@ -85,6 +98,11 @@ body {
 .player_container .wrapper .player_timeline .progress_area:hover .progress_bar::before {
   width: 12px;
   height: 12px;
+}
+
+.player_container .wrapper .player_timeline .progress_area:hover .progress_bar span {
+  opacity: 1;
+  visibility: visible;
 }
 
 .player_container .wrapper .player_controls,

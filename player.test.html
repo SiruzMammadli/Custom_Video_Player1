@@ -22,7 +22,9 @@
       <div class="wrapper">
         <div class="player_timeline">
           <div class="progress_area">
-            <div class="progress_bar"></div>
+            <div class="progress_bar">
+              <span>00:00</span>
+            </div>
           </div>
         </div>
         <ul class="player_controls">
@@ -35,13 +37,15 @@
           <li class="controls center">
             <span class="time current_time">00:00:00</span>
             <button class="fast_rewind">
-              <i class="material-symbols-rounded"> fast_rewind </i>
+              <i class="material-symbols-rounded" id="fast_rewind"> fast_rewind </i>
             </button>
             <button class="play_pause">
-              <i class="material-symbols-rounded" id="play_pause"> play_arrow </i>
+              <i class="material-symbols-rounded" id="play_pause">
+                play_arrow
+              </i>
             </button>
             <button class="fast_forward">
-              <i class="material-symbols-rounded"> fast_forward </i>
+              <i class="material-symbols-rounded" id="fast_forward"> fast_forward </i>
             </button>
             <span class="time time_duration">00:00:00</span>
           </li>
